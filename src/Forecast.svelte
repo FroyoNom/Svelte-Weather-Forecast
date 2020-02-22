@@ -12,7 +12,7 @@
 
   onMount(() => {
     location = "6174041";
-    getCurrentWeather();
+    getCurrentForecast();
   });
 
   let location = "";
@@ -31,10 +31,9 @@
   let dayName4;
   let dayName5;
   let every;
-  const days = config.DAYS;
   let week;
 
-  const getCurrentWeather = () => {
+  const getCurrentForecast = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         LAT = position.coords.latitude;
