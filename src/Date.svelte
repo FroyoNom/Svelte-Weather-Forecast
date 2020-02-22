@@ -68,19 +68,11 @@
     width: 70%;
     margin: 0 0 1rem 0;
     padding: 0;
-    color: #a1a3af;
+    color: #9da4ac;
   }
 
   i {
-    color: rgba(51, 51, 51, 0.664);
-  }
-
-  .location {
-    background-color: #f9f9f9;
-    border-radius: 25px;
-    text-align: center;
-    padding: 5px 20px;
-    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+    color: #48484a;
   }
 </style>
 
