@@ -10,51 +10,60 @@
     icon: "https://placehold.it/50/50"
   };
 
-  let location = "";
-  let loading = true;
-  let error = false;
-  let icons;
-  const API_KEY = config.APIKEY;
-  const LAT = config.LAT;
-  const LON = config.LON;
-
   onMount(() => {
     location = "6174041";
     getCurrentWeather();
   });
 
+  let location = "";
+  let loading = true;
+  let error = false;
+
+  const API_KEY = config.APIKEY;
+
   let temps;
+  let icons;
+  let LAT;
+  let LON;
+
   const getCurrentWeather = () => {
-    loading = true;
-    fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${LAT}&lon=${LON}&units=metric&appid=${API_KEY}`
-    )
-      .then(res => res.json())
-      .then(doc => {
-        if (doc.error) {
-          error = true;
-          return;
-        }
-        weather = doc;
-        temps = [
-          weather.list[4].main.temp,
-          weather.list[12].main.temp,
-          weather.list[20].main.temp,
-          weather.list[28].main.temp,
-          weather.list[36].main.temp
-        ];
-        icons = [
-          weather.list[4].weather[0].icon,
-          weather.list[12].weather[0].icon,
-          weather.list[20].weather[0].icon,
-          weather.list[28].weather[0].icon,
-          weather.list[36].weather[0].icon
-        ];
-        loading = false;
-      })
-      .catch(err => {
-        error = true;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        LAT = position.coords.latitude;
+        LON = position.coords.longitude;
+
+        loading = true;
+        fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${LAT}&lon=${LON}&units=metric&appid=${API_KEY}`
+        )
+          .then(res => res.json())
+          .then(doc => {
+            if (doc.error) {
+              error = true;
+              return;
+            }
+            weather = doc;
+            temps = [
+              weather.list[4].main.temp,
+              weather.list[12].main.temp,
+              weather.list[20].main.temp,
+              weather.list[28].main.temp,
+              weather.list[36].main.temp
+            ];
+            icons = [
+              weather.list[4].weather[0].icon,
+              weather.list[12].weather[0].icon,
+              weather.list[20].weather[0].icon,
+              weather.list[28].weather[0].icon,
+              weather.list[36].weather[0].icon
+            ];
+            loading = false;
+          })
+          .catch(err => {
+            error = true;
+          });
       });
+    }
   };
 
   const retry = () => {
@@ -114,6 +123,7 @@
             alt="weather" />
         {/each}
       </div>
+      <div class="days" />
     </div>
   {/if}
 </div>
