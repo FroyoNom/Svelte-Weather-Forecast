@@ -54,8 +54,8 @@ export default {
       // 2 level deep object should be stringify
       process: JSON.stringify({
         env: {
-          APIKEY1: "67fade6a3f7116f4c5c87461ded3cc33",
-          APIKEY2: "9c69ed0ea5b22a10bd2d38877de28506",
+          APIKEY1: process.env.API_KEY1,
+          APIKEY2: process.env.API_KEY2,
           API_GEO: process.env.APIGEO
         }
       })
