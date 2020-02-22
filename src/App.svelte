@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import Date from "./Date.svelte";
   import Forecast from "./Forecast.svelte";
 </script>
