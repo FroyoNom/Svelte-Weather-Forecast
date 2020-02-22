@@ -4,6 +4,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
+import dotenv from "dotenv/config";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -55,7 +56,7 @@ export default {
         env: {
           APIKEY1: "67fade6a3f7116f4c5c87461ded3cc33",
           APIKEY2: "9c69ed0ea5b22a10bd2d38877de28506",
-          API_GEO: "AIzaSyDBOzHjSoK5IwKI66rHJSJRXUVcyh3yDQs"
+          API_GEO: process.env.APIGEO
         }
       })
     })
