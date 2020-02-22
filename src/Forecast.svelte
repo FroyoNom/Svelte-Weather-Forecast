@@ -25,6 +25,14 @@
   let icons;
   let LAT;
   let LON;
+  let dayName;
+  let dayName2;
+  let dayName3;
+  let dayName4;
+  let dayName5;
+  let every;
+  const days = config.DAYS;
+  let week;
 
   const getCurrentWeather = () => {
     if (navigator.geolocation) {
@@ -57,6 +65,32 @@
               weather.list[28].weather[0].icon,
               weather.list[36].weather[0].icon
             ];
+
+            week = [
+              weather.list[4].dt_txt,
+              weather.list[12].dt_txt,
+              weather.list[20].dt_txt,
+              weather.list[28].dt_txt,
+              weather.list[36].dt_txt
+            ];
+
+            let day1 = new Date(weather.list[4].dt_txt);
+            dayName = day1.toString().split(" ")[0];
+
+            let day2 = new Date(weather.list[12].dt_txt);
+            dayName2 = day2.toString().split(" ")[0];
+
+            let day3 = new Date(weather.list[20].dt_txt);
+            dayName3 = day3.toString().split(" ")[0];
+
+            let day4 = new Date(weather.list[28].dt_txt);
+            dayName4 = day4.toString().split(" ")[0];
+
+            let day5 = new Date(weather.list[36].dt_txt);
+            dayName5 = day5.toString().split(" ")[0];
+
+            every = [dayName, dayName2, dayName3, dayName4, dayName5];
+
             loading = false;
           })
           .catch(err => {
@@ -78,12 +112,6 @@
     display: flex;
   }
 
-  .info {
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
-  }
-
   .temps {
     display: flex;
     justify-content: space-between;
@@ -96,10 +124,16 @@
     text-align: center;
   }
 
+  .days {
+    display: flex;
+    justify-content: space-between;
+  }
+
   p {
     font-weight: 700;
     margin: 8px 0px;
     padding: 10px 30px;
+    color: #9da4ac;
   }
 </style>
 
@@ -123,7 +157,11 @@
             alt="weather" />
         {/each}
       </div>
-      <div class="days" />
+      <div class="days">
+        {#each every as indie}
+          <p>{indie}</p>
+        {/each}
+      </div>
     </div>
   {/if}
 </div>
