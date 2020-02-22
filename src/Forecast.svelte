@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import config from "./config.js";
 
   // state
   let weather = {
@@ -19,7 +18,7 @@
   let loading = true;
   let error = false;
 
-  const API_KEY = config.APIKEY1;
+  const API_KEY = process.env.APIKEY1;
 
   let temps;
   let icons;

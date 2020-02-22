@@ -1,5 +1,4 @@
 <script>
-  import config from "./config.js";
   import { onMount } from "svelte";
 
   let weather = {
@@ -14,7 +13,7 @@
     getCurrentWeather();
   });
 
-  const API_KEY = "9c69ed0ea5b22a10bd2d38877de28506";
+  const API_KEY = process.env.APIKEY2;
   let currentTemp;
   let LAT;
   let LON;

@@ -1,4 +1,5 @@
 import svelte from "rollup-plugin-svelte";
+import replace from "@rollup/plugin-replace";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
@@ -45,7 +46,19 @@ export default {
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser()
+    production && terser(),
+    replace({
+      FOO: "bar",
+
+      // 2 level deep object should be stringify
+      process: JSON.stringify({
+        env: {
+          APIKEY1: "67fade6a3f7116f4c5c87461ded3cc33",
+          APIKEY2: "9c69ed0ea5b22a10bd2d38877de28506",
+          API_GEO: "AIzaSyDqNdJGQUBFkETmR8ECcFp9g08h6SKcAkY"
+        }
+      })
+    })
   ],
   watch: {
     clearScreen: false

@@ -1,6 +1,4 @@
 <script>
-  import config from "./config.js";
-
   const currentDate = () => {
     const monthNames = [
       "Jan",
@@ -32,7 +30,7 @@
   let city;
   let country;
   let loading = true;
-  let API_KEY = config.API_GEO;
+  let API_KEY = process.env.API_GEO;
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
