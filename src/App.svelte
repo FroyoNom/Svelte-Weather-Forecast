@@ -13,7 +13,13 @@
     border-radius: 25px;
     height: 30em;
     width: 40em;
-    background-color: rgb(247, 247, 247);
+    background-color: #ffffff;
+  }
+
+  h1 {
+    display: grid;
+    grid-template-columns: 1fr 2.55fr;
+    text-align: start;
     margin: 2em 0 0 0;
   }
 </style>
