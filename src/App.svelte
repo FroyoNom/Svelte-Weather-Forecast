@@ -14,7 +14,7 @@
     border-radius: 25px;
     height: 75vh;
     width: 40em;
-    background-color: #ffffff;
+    background-color: #f6f5f7;
   }
 
   h1 {
