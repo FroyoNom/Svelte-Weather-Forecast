@@ -19,7 +19,7 @@
   let loading = true;
   let error = false;
 
-  const API_KEY = config.APIKEY;
+  const API_KEY = config.APIKEY1;
 
   let temps;
   let icons;
@@ -44,12 +44,12 @@
           `https://api.openweathermap.org/data/2.5/forecast?lat=${LAT}&lon=${LON}&units=metric&appid=${API_KEY}`
         )
           .then(res => res.json())
-          .then(doc => {
-            if (doc.error) {
+          .then(data => {
+            if (data.error) {
               error = true;
               return;
             }
-            weather = doc;
+            weather = data;
             temps = [
               weather.list[4].main.temp,
               weather.list[12].main.temp,
