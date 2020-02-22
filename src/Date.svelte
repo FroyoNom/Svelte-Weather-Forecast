@@ -31,12 +31,15 @@
   let LON;
   let city;
   let country;
+  let loading = true;
   let API_KEY = config.API_GEO;
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
       LAT = position.coords.latitude;
       LON = position.coords.longitude;
+
+      loading = true;
 
       fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${API_KEY}`
@@ -45,6 +48,7 @@
         .then(data => {
           city = data.results[0].address_components[3].short_name;
           country = data.results[0].address_components[6].short_name;
+          loading = false;
         })
         .catch(err => {
           if (err.error) {
@@ -82,8 +86,12 @@
 
 <div class="container">
   <p class="current-date">{currentDate()}</p>
-  <p class="location">
-    <i class="fas fa-map-marker-alt" />
-    {city}, {country}
-  </p>
+  {#if loading}
+    <p>Loading..</p>
+  {:else}
+    <p class="location">
+      <i class="fas fa-map-marker-alt" />
+      {city}, {country}
+    </p>
+  {/if}
 </div>
