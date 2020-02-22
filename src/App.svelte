@@ -12,7 +12,7 @@
     justify-content: start;
     box-shadow: 0 10px 30px -15px;
     border-radius: 25px;
-    height: 34.5em;
+    height: 32em;
     width: 40em;
     background-color: #ffffff;
   }
