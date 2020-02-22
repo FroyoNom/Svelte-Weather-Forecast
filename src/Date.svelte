@@ -1,4 +1,6 @@
 <script>
+  import config from "./config.js";
+
   const currentDate = () => {
     const monthNames = [
       "Jan",
@@ -24,6 +26,34 @@
 
     return (today = `${day}, ${mm} ${dd}, ${yyyy}`);
   };
+
+  let LAT;
+  let LON;
+  let city;
+  let country;
+  let API_KEY = config.API_GEO;
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      LAT = position.coords.latitude;
+      LON = position.coords.longitude;
+
+      fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${API_KEY}`
+      )
+        .then(response => response.json())
+        .then(data => {
+          city = data.results[0].address_components[3].short_name;
+          country = data.results[0].address_components[6].short_name;
+        })
+        .catch(err => {
+          if (err.error) {
+            error = true;
+            return;
+          }
+        });
+    });
+  }
 </script>
 
 <style>
@@ -54,6 +84,6 @@
   <p class="current-date">{currentDate()}</p>
   <p class="location">
     <i class="fas fa-map-marker-alt" />
-    hello
+    {city}, {country}
   </p>
 </div>
