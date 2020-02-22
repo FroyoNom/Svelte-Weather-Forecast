@@ -131,6 +131,21 @@
     padding: 10px 30px;
     color: #9da4ac;
   }
+
+  @media only screen and (max-width: 411px) {
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .icons,
+    .days,
+    .temps {
+      display: grid;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
 </style>
 
 <div class="container">

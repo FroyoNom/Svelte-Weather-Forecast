@@ -23,6 +23,60 @@
     text-align: start;
     margin: 2em 0 0 0;
   }
+
+  @media only screen and (max-width: 645px) {
+    .container {
+      width: 38em;
+    }
+
+    h1 {
+      grid-template-columns: 1fr 2.37fr;
+    }
+  }
+
+  @media only screen and (max-width: 605px) {
+    .container {
+      width: 36em;
+    }
+
+    h1 {
+      grid-template-columns: 1fr 2.37fr;
+    }
+  }
+
+  @media only screen and (max-width: 470px) {
+    .container {
+      width: 28em;
+    }
+
+    h1 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 411px) {
+    .container {
+      width: 22em;
+      height: 50em;
+    }
+
+    h1 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 370px) {
+    .container {
+      margin-top: 0.5em;
+      width: 19em;
+      height: 46em;
+    }
+
+    h1 {
+      grid-template-columns: 1fr;
+      margin-top: 1em;
+    }
+  }
 </style>
 
 <div class="container">
