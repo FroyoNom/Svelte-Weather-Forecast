@@ -55,7 +55,7 @@ export default {
         env: {
           APIKEY1: "67fade6a3f7116f4c5c87461ded3cc33",
           APIKEY2: "9c69ed0ea5b22a10bd2d38877de28506",
-          API_GEO: "AIzaSyDqNdJGQUBFkETmR8ECcFp9g08h6SKcAkY"
+          API_GEO: "AIzaSyDBOzHjSoK5IwKI66rHJSJRXUVcyh3yDQs"
         }
       })
     })
