@@ -66,7 +66,7 @@
     align-items: center;
     justify-content: space-between;
     width: 70%;
-    margin: 0 0 1rem 0;
+    margin: 0;
     padding: 0;
     color: #9da4ac;
   }
