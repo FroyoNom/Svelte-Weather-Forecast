@@ -69,12 +69,12 @@
     .container {
       margin-top: 0.5em;
       width: 19em;
-      height: 46em;
+      height: 50em;
     }
 
     h1 {
       grid-template-columns: 1fr;
-      margin-top: 1em;
+      margin-top: 2.5em;
     }
   }
 </style>

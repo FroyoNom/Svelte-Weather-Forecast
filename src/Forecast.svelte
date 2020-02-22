@@ -189,7 +189,7 @@
       <div class="icons">
         {#each icons as icon}
           <img
-            src="http://openweathermap.org/img/wn/{icon}@2x.png"
+            src="http://openweathermap.org/img/wn/{icon}.png"
             alt="weather" />
         {/each}
       </div>
