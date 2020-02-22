@@ -2,3 +2,4 @@
 /public/build/
 config.js
 .DS_Store
+package-lock.json
