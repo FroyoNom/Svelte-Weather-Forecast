@@ -51,11 +51,11 @@
             }
             weather = data;
             temps = [
-              weather.list[4].main.temp,
-              weather.list[12].main.temp,
-              weather.list[20].main.temp,
-              weather.list[28].main.temp,
-              weather.list[36].main.temp
+              weather.list[4].main.temp.toFixed(0),
+              weather.list[12].main.temp.toFixed(0),
+              weather.list[20].main.temp.toFixed(0),
+              weather.list[28].main.temp.toFixed(0),
+              weather.list[36].main.temp.toFixed(0)
             ];
             icons = [
               weather.list[4].weather[0].icon,

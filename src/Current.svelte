@@ -41,7 +41,7 @@
             }
 
             weather = data;
-            currentTemp = weather.main.temp;
+            currentTemp = weather.main.temp.toFixed(0);
 
             loading = false;
           })
@@ -60,8 +60,8 @@
 </script>
 
 <style>
-  h1 {
-    margin: 0;
+  .temp {
+    margin: 1em 0;
   }
 </style>
 
@@ -71,5 +71,5 @@
 {:else if loading}
   <p>Loading..</p>
 {:else}
-  <h1>{currentTemp}°C</h1>
+  <h1 class="temp">{currentTemp}°</h1>
 {/if}
