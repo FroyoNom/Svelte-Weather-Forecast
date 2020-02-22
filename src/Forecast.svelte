@@ -66,14 +66,6 @@
               weather.list[36].weather[0].icon
             ];
 
-            week = [
-              weather.list[4].dt_txt,
-              weather.list[12].dt_txt,
-              weather.list[20].dt_txt,
-              weather.list[28].dt_txt,
-              weather.list[36].dt_txt
-            ];
-
             let day1 = new Date(weather.list[4].dt_txt);
             dayName = day1.toString().split(" ")[0];
 
