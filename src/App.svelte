@@ -12,7 +12,7 @@
     justify-content: start;
     box-shadow: 0 10px 30px -15px;
     border-radius: 25px;
-    height: 32em;
+    height: 75vh;
     width: 40em;
     background-color: #ffffff;
   }
@@ -57,7 +57,7 @@
   @media only screen and (max-width: 411px) {
     .container {
       width: 22em;
-      height: 50em;
+      height: 80vh;
     }
 
     h1 {
@@ -69,12 +69,12 @@
     .container {
       margin-top: 0.5em;
       width: 19em;
-      height: 50em;
+      height: 80vh;
     }
 
     h1 {
       grid-template-columns: 1fr;
-      margin-top: 2.5em;
+      margin-top: 1.5em;
     }
   }
 </style>
