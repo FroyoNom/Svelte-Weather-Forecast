@@ -14,7 +14,7 @@
     border-radius: 25px;
     height: 75vh;
     width: 40em;
-    background-color: #f6f5f7;
+    background-image: linear-gradient(#339adf, #3ccbff, #75ccff);
   }
 
   h1 {
@@ -22,6 +22,23 @@
     grid-template-columns: 1fr 2.55fr;
     text-align: start;
     margin: 2em 0 0 0;
+    color: #fff;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    h1 {
+      margin-top: 3.5em;
+      grid-template-columns: 1fr;
+      font-size: 3rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    h1 {
+      margin-top: 2em;
+      grid-template-columns: 1fr;
+      font-size: 2rem;
+    }
   }
 
   @media only screen and (max-width: 645px) {

@@ -109,7 +109,7 @@
 
   .temps {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
   }
 
@@ -121,14 +121,14 @@
 
   .days {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   p {
     font-weight: 700;
-    margin: 8px 0px;
+    margin: 9px 0px;
     padding: 10px 30px;
-    color: #9da4ac;
+    color: #ffffffce;
   }
 
   @media only screen and (max-width: 411px) {

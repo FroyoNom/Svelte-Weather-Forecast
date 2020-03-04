@@ -70,6 +70,7 @@
   .temp {
     font-size: 3.5em;
     margin: 0;
+    color: #fff;
   }
 </style>
 

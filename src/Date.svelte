@@ -66,11 +66,11 @@
     width: 70%;
     margin: 0;
     padding: 0;
-    color: #9da4ac;
+    color: rgba(255, 255, 255, 0.815);
   }
 
   i {
-    color: #48484a;
+    color: rgba(255, 255, 255, 0.815);
   }
 
   .lds-ellipsis {
@@ -85,7 +85,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #9da4ac;
+    background: #fff;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
   .lds-ellipsis div:nth-child(1) {
@@ -126,6 +126,13 @@
     }
     100% {
       transform: translate(24px, 0);
+    }
+  }
+
+  @media only screen and (max-width: 411px) {
+    .location,
+    .current-date {
+      text-align: center;
     }
   }
 </style>
