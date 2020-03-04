@@ -102,28 +102,23 @@
     display: flex;
   }
 
-  .temps {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-  }
-
-  .icons {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-  }
-
+  .temps,
+  .icons,
   .days {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0;
   }
 
   p {
     font-weight: 700;
-    margin: 9px 0px;
-    padding: 10px 30px;
+    margin: 1em 2em;
     color: #ffffffce;
+  }
+
+  img {
+    margin: 0 1.3em;
   }
 
   @media only screen and (max-width: 411px) {
