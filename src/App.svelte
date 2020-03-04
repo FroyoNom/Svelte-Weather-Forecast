@@ -10,7 +10,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    box-shadow: 0 10px 30px -15px;
+    -webkit-box-shadow: 0px 0px 18px -2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 18px -2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 18px -2px rgba(0, 0, 0, 0.5);
     border-radius: 25px;
     height: 75vh;
     width: 40em;
@@ -22,7 +24,6 @@
     grid-template-columns: 1fr 2.55fr;
     text-align: start;
     margin: 2em 0 0 0;
-    color: #fff;
   }
 
   @media only screen and (max-width: 1024px) {
