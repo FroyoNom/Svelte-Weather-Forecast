@@ -74,7 +74,7 @@
 
     h1 {
       grid-template-columns: 1fr;
-      margin-top: 1.5em;
+      margin-top: 1em;
     }
   }
 </style>
